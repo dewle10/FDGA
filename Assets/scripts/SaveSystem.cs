@@ -1,37 +1,45 @@
 using UnityEngine;
 using System.IO;
-using System.Runtime.Serialization.Formatters.Binary;
 
-public static class SaveSystem 
+public static class SaveSystem
 {
     public static void SavePlayer(PlayerInfo playerInfo)
     {
-        BinaryFormatter formatter = new BinaryFormatter();
-        string path = Path.Combine(Application.persistentDataPath, "/player.fun");
-        FileStream stream = new FileStream(path, FileMode.Create);
+        string path = Path.Combine(Application.persistentDataPath, "player.json");
 
-        PlayerData data = new PlayerData(playerInfo);
-
-        formatter.Serialize(stream, data);
-        stream.Close();
+        try
+        {
+            PlayerData data = new PlayerData(playerInfo);
+            string json = JsonUtility.ToJson(data);
+            File.WriteAllText(path, json);
+        }
+        catch (IOException e)
+        {
+            Debug.LogError("Failed to save player data to " + path + " with exception: " + e);
+        }
     }
 
     public static PlayerData LoadPlayer()
     {
-        string path = Path.Combine(Application.persistentDataPath, "/player.fun");
+        string path = Path.Combine(Application.persistentDataPath, "player.json");
+
         if (File.Exists(path))
         {
-            BinaryFormatter formatter = new BinaryFormatter();
-            FileStream stream = new FileStream(path, FileMode.Open);
-
-            PlayerData data = formatter.Deserialize(stream) as PlayerData;
-            stream.Close();
-
-            return data;
+            try
+            {
+                string json = File.ReadAllText(path);
+                PlayerData data = JsonUtility.FromJson<PlayerData>(json);
+                return data;
+            }
+            catch (IOException e)
+            {
+                Debug.LogError("Failed to load player data from " + path + " with exception: " + e);
+                return null;
+            }
         }
         else
         {
-            Debug.LogError("Save file not found" + path);
+            Debug.LogError("Save file not found: " + path);
             return null;
         }
     }
