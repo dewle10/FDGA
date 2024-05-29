@@ -1,0 +1,12 @@
+{
+    "name": "iaction",
+    "maps": [
+        {
+            "name": "gameplay",
+            "id": "b8511b87-70f2-4c2a-9466-483e87186434",
+            "actions": [],
+            "bindings": []
+        }
+    ],
+    "controlSchemes": []
+}
