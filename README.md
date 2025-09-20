@@ -11,3 +11,5 @@ Features:
 Play the Demo on: https://dewle.itch.io/fdga.
 
 Made in Unity 2022.3.37f1.
+![FDGA Gameplay1](Assets/sprites/SS/jIDSEJ.png)
+![FDGA Gameplay2](Assets/sprites/SS/6K58Zw.png)
