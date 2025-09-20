@@ -33,7 +33,7 @@ public class PlayerShoot : MonoBehaviour
     void Update()
     {
         
-        if (Input.GetKeyDown(KeyCode.Keypad0) && Time.time > lastFiredTime + fireRate && currentAmmo > 0)
+        if (Input.GetKeyDown(KeyCode.LeftAlt) || Input.GetKeyDown(KeyCode.Keypad0) && Time.time > lastFiredTime + fireRate && currentAmmo > 0)
         {
             lastFiredTime = Time.time;
             Shoot();
