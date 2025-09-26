@@ -8,7 +8,7 @@ Features:
 * Map split into 6 regions
 * Progress tracking
 
-Play now: https://dewle.itch.io/fdga.
+Play now: [dewle.itch.io/fdga](https://dewle.itch.io/fdga).
 
 Made in Unity 2022.3.37f1.
 ![FDGA Gameplay1](Assets/sprites/SS/jIDSEJ.png)
