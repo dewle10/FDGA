@@ -9,6 +9,7 @@ Features:
 * Progress tracking
 
 Play now: [dewle.itch.io/fdga](https://dewle.itch.io/fdga).
+Gameplay: [youtu.be/uVKs9gKvSJQ](https://youtu.be/uVKs9gKvSJQ).
 
 Made in Unity 2022.3.37f1.
 ![FDGA Gameplay1](Assets/sprites/SS/jIDSEJ.png)
